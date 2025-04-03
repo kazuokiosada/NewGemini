@@ -1,0 +1,137 @@
+デスクトップアプリとして、砂時計アプリを作ってください。
+砂時計の外観
+ー砂時計は、砂の動作を表すガラス瓶とそれを取り囲んで保護する枠からできている
+ー中央に、上下２つのガラスの瓶がある
+ーガラス瓶の上下、両端に、２つのガラス瓶を囲むように繋がった枠がある
+ーガラス瓶と枠の背景は透明である
+ーーガラス瓶は無色透明とする
+ーーガラス瓶は、上と下の2つの上下対称な瓶が繋がってできている
+ーーー上のガラス瓶は、上部が垂直な円筒形で、途中から下方に円錐状に細くなっている
+ーーーー上のガラス瓶は、上端が閉じている
+ーーーー上のガラス瓶下方の円錐の傾きの角度（漏斗角）は、水平方向に対して50°とする
+ーーー下のガラス瓶は、上の瓶と上下対称形である
+ーーー上下のガラス瓶は、砂時計の中央部で、互いのの円錐の頂点を結ぶ細い短い透明のガラスパイプで繋がっている
+ーーー2つのガラス瓶の円錐の頂点部には、内部に穴が開いており、ガラスパイプを通じて、上の瓶から下の瓶に砂が落ちる
+ーーーガラス瓶の内部に砂が入っている
+ーーーー砂の色は、薄い紫
+ーーーー砂の安息角は、37°
+ーー枠の色は、砂の色にマッチした色とする
+砂の動作
+ー初期状態では、全ての砂は上の瓶に入っている
+ーー砂は、上の瓶の下方の円錐の頂点を下端として、上方向に向かって、隙間なくガラス瓶の中に詰まっている
+ーー砂の最上端は、水平になっているものとする
+ー動作開始すると、上のガラス瓶下端より順次砂が落ちていく
+ーー上の瓶の砂の残量は時間とともに減少する
+ーー上の瓶の砂の残量が無くなるまでの時間が、砂時計が計る時間である
+ーーー砂の全量と時間当たりに落ちる砂の量から、砂時計の計量時間が決まることになる
+ーー上の瓶の砂の形は、経過時間とともに、変化する
+ーーー砂の形の変化は、当面、常識的なものとする
+ーーー現実と著しく異なっている場合や改良できる場合には、変更を指示する
+ー動作開始すると、下のガラス瓶には、落ちてきた砂が積もっていく
+ーー下のガラス瓶には、砂の量が増えて積もっていく
+ーー積もっていく砂の形は、時間とともに変化する
+ーーー砂の形の変化は、当面、常識的なものとする
+ーーー現実と著しく異なっている場合や改良できる場合には、変更を指示する
+ー動作終了まで、2つの瓶の間には、砂が絶えず落ちている
+ーー落ちる砂の量は、時間当たり一定と仮定する
+ーー落ちる砂の形は、連続した直線状である
+ーーー改良できる場合は、別途指示する
+ー上の瓶の砂の残量が無くなると、砂の動作は停止する
+ーー上のガラス瓶には、砂は入っていない
+ーー下のガラス瓶には、砂の全量が積もっている
+ーー2つのガラス瓶の間には、落ちる砂は無い
+アプリとしての要請
+ーデスクトップアプリとする
+ー起動時に、計測開始する
+ーいくつかの項目を実行時に変更可能とする
+ーー時計としての計測時間の変更：デフォルト値：1分。最大値：30分
+ーーー計測時間の変更とともに、砂の全量または時間当たりに落ちる砂の量を変更する必要がある。砂の全量を変えると、砂または時計の形や大きさの変更につながるので、ここでは、時間当たりの量を変更することにしてよい。
+ーー砂の色の変更：デフォルト値：薄い赤紫
+ーー動作モードの変更：
+ーーーデフォルト：計測終了時に、砂の動きを停止し、形を維持する。プルダウンメニューからの指示により、計測再開する
+ーーー連続運転モード：計測終了時に、アニメーション動作で砂時計全体を上下半回転し、初期状態から動作を再開する
+ー左マウスドラッグで、画面上で、任意の位置に、砂時計全体を移動させられる
+ー右マウスクリックで、プルダウンメニューを表示し、動作の変更、指示ができる
+ーー再計測：停止している砂を初期状態に戻し、時計の計測を再開する
+ーー時間変更：変更する計測時間を指定する
+ーー砂の色：砂の色を選択させて、変更する。デフォルト値：薄い紫色
+ーー実行停止：アプリの実行停止
+ーガラス瓶、砂、枠ともに、立体的な形状を表現する。加えて、
+ーーガラス瓶：透明感、屈折効果、反射効果もできる限り、表現する
+ーー砂：反射効果もできる限り、表現する
+ーー枠：反射効果もできる限り、表現する
+コーディング上の要請
+ーPython
+ーー必要なライブラリーは任意
+ーー可能な限り、注釈を詳しく付加する
+
+
+Please create an hourglass app as a desktop app.
+
+Hourglass appearance
+-The hourglass is made up of two glass bottles that show the movement of sand and a frame that surrounds and protects them
+-The glass bottles are in the center, one above the other
+-The frame surrounds the two glass bottles
+-The background of the glass bottles and the frame is transparent
+--The glass bottles are colorless and transparent.
+--Two connected bottles are positioning like, one above and one below, and vertically symmetrical.
+--The upper glass bottle is a vertical cylinder at the top, tapering downwards in a cone shape halfway through.
+--The upper glass bottle is closed at the top.
+--The angle of inclination of the cone below the upper glass bottle (funnel angle) is 50° to the horizontal.
+--The lower glass bottle is symmetrical from top to bottom to the upper bottle.
+--The upper and lower glass bottles are connected in the center of the hourglass by a thin, short, transparent glass pipe that connects the apex of each cone.
+--The apex of the cone of the two glass bottles has a hole inside, and sand falls from the upper bottle to the lower bottle through the glass pipe.
+--The glass bottles contain sand.
+--The color of the sand is light purple.
+--The angle of repose of the sand is 37°.
+--The color of the frame is optional but it should match the color of the sand.
+
+Sand behavior
+-Initially, all the sand is in the upper bottle
+-The sand is packed into the glass bottle with no gaps, moving upwards from the apex of the cone at the bottom of the upper bottle
+-The top of the sand is assumed to be horizontal.
+-When the timer starts, sand falls from the bottom of the upper glass bottle.
+--The amount of sand remaining in the upper bottle decreases over time.
+--The time it takes for the upper bottle to run out of sand is the time measured by the hourglass.
+--The total amount of sand and the amount of sand falling per hour determine the hourglass's measuring time.
+--The shape of the sand in the upper bottle changes over time.
+--The change in the shape of the sand is to be considered common sense for the time being.
+--If it is significantly different from reality or if it can be improved, we will instruct you to make changes.
+--When the operation starts, the sand that falls accumulates in the glass bottle below.
+--The amount of sand increases and accumulates in the glass bottle below.
+--The shape of the accumulated sand changes over time.
+---For the time being, the change in the shape of the sand will be considered common sense.
+---If it is significantly different from reality or if it can be improved, instruct the change.
+-Sand continues to fall between the two bottles until the operation is completed
+-The amount of sand falling is assumed to be constant per unit time
+-The shape of the falling sand is a continuous straight line
+-When the sand in the upper bottle runs out, the sand movement stops
+--No sand left in the upper glass bottle
+--The entire amount of sand is piled up in the lower glass bottle
+--No sand is falling between the two glass bottles any more.
+
+Requirements as an application
+-Desktop application
+-Starts measurement when launched
+-Can change some items at runtime
+--Change measurement time as a clock: Default value: 1 minute. Maximum value: 30 minutes
+---Along with changing the measurement time, it is necessary to change the total amount of sand or the amount of sand falling per hour. Changing the total amount of sand will lead to changes in the shape and size of the sand or the clock, so here it is fine to change the amount per hour.
+--Change sand color: Default value: Light reddish purple
+--Change operation mode:
+---Default: When measurement is finished, the movement of the sand stops and the shape is maintained. Measurement is resumed by instructions from the pull-down menu
+---Continuous operation mode: When measurement is finished, the entire hourglass rotates up and down in an animation and resumes operation from the initial state
+-Drag the left mouse to move the entire hourglass anywhere on the screen
+-Click the right mouse to display a pull-down menu and change or instruct the action
+--Remeasure: Reset the stopped sand to its initial state and restart the clock
+--Change time: Specify the measurement time to change
+--Sand color: Select the sand color and change it. Default: Light purple
+--Stop execution: Stop the application
+-The glass bottle, sand, and frame all express a three-dimensional shape. In addition,
+--Glass bottles and pipe: Expresses transparency, refraction, and reflection effects as much as possible
+--Sand: Expresses reflection effects as much as possible
+--Frame: Expresses reflection effects as much as possible
+
+Coding requirements
+- Python
+- Required libraries are optional
+- Add detailed annotations as much as possible

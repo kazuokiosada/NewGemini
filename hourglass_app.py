@@ -1,10 +1,15 @@
 """
-デスクトップアプリとして砂時計アプリを作成するPythonコード例を以下に示します。このコードは、PyQt5ライブラリを使用してGUIを作成し、OpenGLライブラリを使用して砂時計の3Dグラフィックスをレンダリングします。また、砂の落下アニメーションと、ユーザーが設定をカスタマイズするためのオプションも含まれています。
+デスクトップアプリとして砂時計アプリを作成するPythonコード例を以下に示します。
+このコードは、PyQt5ライブラリを使用してGUIを作成し、OpenGLライブラリを使用して砂時計の3Dグラフィックスをレンダリングします。
+また、砂の落下アニメーションと、ユーザーが設定をカスタマイズするためのオプションも含まれています。
 
+Below is a Python code example that creates an hourglass app for your desktop. 
+The code uses the PyQt5 library to create the GUI and the OpenGL library to render the 3D graphics of the hourglass. 
+It also includes sand falling animations and options for users to customize the settings.
 ```python
 """
 import sys
-import time
+import time as tm
 import math
 import random
 from PyQt5 import QtCore, QtGui, QtWidgets, QtOpenGL
@@ -130,7 +135,7 @@ class HourglassWidget(QtOpenGL.QGLWidget):
         glPopMatrix()
 
     def start_timer(self):
-        self.start_time = time.time()
+        self.start_time = tm.time()
         self.running = True
         self.timer.start(50)  # 50ミリ秒ごとに更新
 
@@ -140,7 +145,7 @@ class HourglassWidget(QtOpenGL.QGLWidget):
 
     def update_sand(self):
         if self.running:
-            self.elapsed_time = time.time() - self.start_time
+            self.elapsed_time = tm.time() - self.start_time
             if self.elapsed_time < self.total_time:
                 self.sand_height_top = max(0.0, 1.0 - self.elapsed_time / self.total_time)
                 self.sand_height_bottom = min(1.0, self.elapsed_time / self.total_time)
@@ -181,7 +186,7 @@ class HourglassWidget(QtOpenGL.QGLWidget):
         action = menu.exec_(pos)
 
         if action == restart_action:
-            self.start_time = time.time()
+            self.start_time = tm.time()
             self.elapsed_time = 0
             self.sand_height_top = 1.0
             self.sand_height_bottom = 0.0
@@ -247,4 +252,33 @@ if __name__ == '__main__':
 * エラー処理の追加
 
 このコードはあくまで出発点です。必要に応じて改良を加えて、より高度な砂時計アプリを作成してください。
+
+**Key points of this code:**
+* **Uses PyQt5 and OpenGL:** PyQt5 and OpenGL are used for GUI and 3D graphics rendering.
+* **3D model of hourglass:** OpenGL is used to render a 3D model of the hourglass glass bottle and sand.
+* **Sand fall animation:** A timer is used to implement the sand fall animation.
+* **User settings:** You can change the measurement time, sand color, etc. from the right-click menu.
+* **Move by dragging:** You can move the hourglass on the screen by dragging the left mouse.
+* **Continuous operation mode:** This is not implemented at the moment, but it can be implemented by adding the `self.continuous_mode` variable and adding a process to invert the hourglass after the animation ends.
+* **Changing the frame image:** This is not implemented at the moment, but it can be implemented by using `QPixmap` to load the frame image and rendering it as an OpenGL texture.
+
+**How ​​to run:**
+1. Install the necessary libraries.
+```bash
+pip install PyQt5 PyOpenGL
+```
+2. Save the above code with a file name such as `hourglass_app.py`.
+3. Run `python hourglass_app.py` in the terminal.
+
+**Future improvements:**
+* Implement continuous operation mode
+* Implement frame image change function
+* Improve sand falling animation (more realistic movement)
+* Add glass refraction and reflection effect
+* Add sand reflection effect
+* Add frame reflection effect
+* Persistent settings (retain settings even after closing the app)
+* Add error handling
+
+This code is just a starting point. Please improve it as needed to create a more advanced hourglass app.
 """
